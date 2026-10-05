@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Inside the Journey — Understanding My Chiari I Malformation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,500;12..96,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="bg"></div>
+<canvas id="fx"></canvas><div id="spot"></div>
+<div id="prog"></div>
+<div class="cur"></div><div class="ring"></div>
+
+<header>
+  <a class="brand" href="#" data-i="0" data-h>INSIDE THE JOURNEY</a>
+  <nav id="nav" aria-label="Sections">
+    <a href="#" data-i="0" data-h><span>01 INTRO</span><i></i></a>
+    <a href="#" data-i="1" data-h><span>02 ANATOMY</span><i></i></a>
+    <a href="#" data-i="2" data-h><span>03 MRI</span><i></i></a>
+    <a href="#" data-i="3" data-h><span>04 FINDING</span><i></i></a>
+    <a href="#" data-i="4" data-h><span>05 BRAINSTEM</span><i></i></a>
+    <a href="#" data-i="6" data-h><span>06 SURGERY</span><i></i></a>
+    <a href="#" data-i="9" data-h><span>07 RECOVERY</span><i></i></a>
+    <a href="#" data-i="10" data-h><span>08 REFLECTION</span><i></i></a>
+  </nav>
+</header>
+<p class="note">Conceptual educational visualization — not a reconstruction of my scans.</p>
+
+<!-- One continuous camera: a single fixed SVG stage -->
+<svg id="stage" viewBox="0 0 600 700" preserveAspectRatio="xMidYMid meet" aria-label="Conceptual illustration of brain, cerebellum, brainstem and upper spinal cord">
+  <defs>
+    <linearGradient id="tis" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b9b2b6"/><stop offset="1" stop-color="#5c6270"/></linearGradient>
+    <linearGradient id="tis2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9aa3b2"/><stop offset="1" stop-color="#4d5563"/></linearGradient>
+    <linearGradient id="cordg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8d96a4"/><stop offset="1" stop-color="#555d6b"/></linearGradient>
+    <pattern id="fol" width="9" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(-14)"><path d="M0 3H9" stroke="#0b0e14" stroke-opacity=".38" stroke-width="1.2"/></pattern>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="5"/></filter>
+    <radialGradient id="rg"><stop offset=".68" stop-color="#fff"/><stop offset="1" stop-color="#000"/></radialGradient><mask id="fade" maskUnits="userSpaceOnUse" x="-502" y="-416" width="1434" height="1434"><rect x="-502" y="-416" width="1434" height="1434" fill="url(#rg)"/></mask><clipPath id="clipc"><path id="cerp" d="M120 215C110 120 190 62 290 62C400 62 480 120 478 215C476 270 440 300 395 305C360 308 330 296 300 296C250 296 200 312 165 290C135 272 122 248 120 215Z"/></clipPath>
+    <path id="cbp" d="M296 300C340 285 410 290 440 318C455 345 425 372 380 378C345 382 315 365 296 340Z"/>
+  </defs>
+  <g id="par"><g id="br"><g id="cam">
+    <g id="photo"><image href="head.png" x="-502" y="-416" width="1434" height="1434" mask="url(#fade)"/>
+      <ellipse id="cglow" cx="352" cy="298" rx="80" ry="54" transform="rotate(-20 352 298)" fill="#b9a2ff" fill-opacity=".2" filter="url(#glow)"/>
+      <path class="cp" d="M293 424C287 500 288 590 317 648C350 720 400 860 478 998" fill="none" stroke="#d6e8ff" stroke-width="2.2" stroke-dasharray="10 70" stroke-linecap="round"/>
+      <g fill="#dfe9ff" stroke="#a9b8ff" stroke-opacity=".35" stroke-width="4"><circle class="nd" cx="58" cy="4" r="2"/><circle class="nd" cx="156" cy="-52" r="2"/><circle class="nd" cx="254" cy="4" r="2"/><circle class="nd" cx="338" cy="-52" r="2"/><circle class="nd" cx="422" cy="46" r="2"/><circle class="nd" cx="226" cy="116" r="2"/><circle class="nd" cx="114" cy="116" r="2"/><circle class="nd" cx="464" cy="172" r="2"/><circle class="nd" cx="-12" cy="46" r="2"/><circle class="nd" cx="324" cy="116" r="2"/></g></g>
+    <g id="anat">
+      <path id="sk" d="M105 240C85 100 190 28 300 26C415 26 505 95 493 240C490 305 480 352 472 382M150 382C130 360 112 300 105 240" fill="none" stroke="#cfd8e0" stroke-opacity=".5" stroke-width="1.4" pathLength="1"/>
+      <path id="cord" d="M270 410L308 410L306 690L272 690Z" fill="url(#cordg)"/>
+      <path id="bs" d="M262 285L318 285C316 340 312 380 306 420L270 420C266 380 266 330 262 285Z" fill="url(#tis2)"/>
+      <path class="cp" d="M289 290V690" fill="none" stroke="#bfe0ff" stroke-width="2" stroke-dasharray="10 70" stroke-linecap="round"/><g id="cer"><use href="#cerp" fill="url(#tis)"/>
+        <g clip-path="url(#clipc)" fill="none" stroke-linecap="round"><path stroke="#0b0e14" stroke-opacity=".3" stroke-width="5" d="M170 150C210 120 250 190 290 140S360 120 400 150M150 200C200 170 240 230 290 190S370 180 440 200M190 100C230 90 260 120 300 100S380 90 420 110M210 250C250 230 290 270 340 245S410 250 430 240"/><path stroke="#fff" stroke-opacity=".12" stroke-width="1.5" d="M170 156C210 126 250 196 290 146S360 126 400 156M150 206C200 176 240 236 290 196S370 186 440 206"/></g><g clip-path="url(#clipc)" fill="none" stroke-linecap="round"><g stroke="#bfe0ff" stroke-width="2.2" stroke-dasharray="14 118"><path class="pl" d="M170 150C210 120 250 190 290 140S360 120 400 150"/><path class="pl" d="M150 200C200 170 240 230 290 190S370 180 440 200"/><path class="pl" d="M190 100C230 90 260 120 300 100S380 90 420 110"/><path class="pl" d="M210 250C250 230 290 270 340 245S410 250 430 240"/><path class="pl" d="M250 80C230 150 260 230 230 290"/><path class="pl" d="M350 70C380 130 340 200 380 300"/></g><g fill="#cfe8ff" stroke="#9ec4e6" stroke-opacity=".35" stroke-width="4"><circle class="nd" cx="200" cy="140" r="2"/><circle class="nd" cx="260" cy="110" r="2"/><circle class="nd" cx="330" cy="150" r="2"/><circle class="nd" cx="390" cy="120" r="2"/><circle class="nd" cx="240" cy="210" r="2"/><circle class="nd" cx="320" cy="225" r="2"/><circle class="nd" cx="410" cy="200" r="2"/><circle class="nd" cx="170" cy="200" r="2"/><circle class="nd" cx="290" cy="170" r="2"/><circle class="nd" cx="360" cy="260" r="2"/><circle class="nd" cx="220" cy="260" r="2"/><circle class="nd" cx="300" cy="95" r="2"/></g></g></g>
+      <g id="cbl"><use href="#cbp" fill="url(#tis2)"/><use href="#cbp" fill="url(#fol)"/><use class="cs" href="#cbp" fill="none" stroke="#bfe0ff" stroke-width="1.8" stroke-dasharray="18 150"/></g>
+      <g id="tn"><path d="M318 372C340 366 356 392 350 438C348 458 340 470 332 470C322 468 316 440 318 372Z" fill="#ff9f5a" fill-opacity=".8"/><path d="M326 380C338 395 340 430 334 462" fill="none" stroke="#000" stroke-opacity=".25"/></g>
+      <path d="M150 380C200 392 250 402 268 412M345 410C380 400 430 395 470 380" fill="none" stroke="#dfe6ec" stroke-opacity=".75" stroke-width="5" stroke-linecap="round"/>
+    </g>
+    <use id="cbg" href="#cbp" fill="none" stroke="#9ec4e6" stroke-width="3" filter="url(#glow)" opacity="0"/>
+    <path id="ref" d="M236 410H400" stroke="#9fb3c4" stroke-dasharray="3 4" stroke-width=".8"/>
+    <g id="ms" opacity="0"><path id="msl" d="M372 410V470" stroke="#e8b36a" stroke-width="1.4" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/><path d="M366 410H378M366 470H378" stroke="#e8b36a" stroke-width="1"/><text id="mst" x="384" y="444" fill="#e8b36a" font-size="9">11.9 mm</text></g>
+    <g id="crowd" opacity="0"><ellipse id="ring" cx="312" cy="428" rx="54" ry="50" fill="none" stroke="#e8b36a" stroke-dasharray="4 5" stroke-width="1.2"/><path id="an1" d="M356 450L420 484H470M268 440L220 470H168" fill="none" stroke="#9fb3c4" stroke-width=".8" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/><text x="424" y="480" fill="#cfd8e0" font-size="7.5">tonsillar descent</text><text x="168" y="466" fill="#cfd8e0" font-size="7.5">craniovertebral junction</text></g>
+    <path id="arw" d="M258 392H318M309 385L318 392L309 399" fill="none" stroke="#e8b36a" stroke-width="1.6" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>
+    <g id="abs" fill="none" stroke="#9ec4e6" stroke-width=".8" stroke-dasharray="2 5" opacity="0"><circle cx="300" cy="428" r="34"/><circle cx="300" cy="428" r="58"/><circle cx="300" cy="428" r="86"/></g>
+    <g class="lbs" fill="#cfd8e0" font-size="8"><g class="lb"><circle cx="420" cy="318" r="2" fill="#9ec4e6"/><text x="432" y="321">cerebellum</text></g><g class="lb"><circle cx="290" cy="330" r="2" fill="#9ec4e6"/><text x="214" y="333">brainstem</text></g><g class="lb"><circle cx="400" cy="410" r="2" fill="#9ec4e6"/><text x="408" y="414">foramen magnum</text></g><g class="lb"><circle cx="296" cy="520" r="2" fill="#9ec4e6"/><text x="308" y="523">upper spinal cord</text></g></g>
+    <circle id="tgt" cx="322" cy="440" r="1" fill="none"/>
+  </g></g></g>
+</svg>
+
+<div class="mri" id="mri"><svg viewBox="180 330 250 190"><use href="#photo"/><use href="#tn"/><ellipse cx="312" cy="428" rx="58" ry="52" fill="none" stroke="#e8b36a" stroke-width="1.5" id="mhl" opacity="0"/></svg><i class="scan"></i><b>MRI-style rendering · illustrative</b></div>
+<div class="mri sm" id="mri2"><svg viewBox="180 330 250 190"><use href="#photo"/><use href="#tn"/></svg><b>MRI finding</b></div>
+<p id="vi">Visual interpretation</p>
+<svg id="lk" width="100%" height="100%"><path id="lkp" fill="none" stroke="#e8b36a" stroke-opacity=".7" stroke-dasharray="3 5"/></svg>
+
+<div class="tlw" id="tlw"><div id="tr">
+  <div class="st"><b>Finding</b></div><div class="st"><b>Understanding</b></div><div class="st"><b>Surgical Intervention</b></div><div class="st"><b>Recovery</b></div>
+</div></div>
+
+<!-- Story panels -->
+<section class="p hero"><h1 id="title" aria-label="Inside the Journey">INSIDE THE JOURNEY</h1><p>A visual exploration of what happened inside my brain and neck.</p><span class="cue" data-h>SCROLL TO EXPLORE</span></section>
+<section class="p"><h2>Sometimes the important story is hidden inside.</h2></section>
+<section class="p"><span class="tag doc">Documented MRI finding</span><h2>Chiari I Malformation</h2><div class="big"><span id="mm">0.0</span><small>mm</small></div><p>Cerebellar tonsillar descent — approximately 11.9 mm below the foramen magnum.</p></section>
+<section class="p"><span class="tag doc">Documented MRI finding</span><h2>The space became crowded.</h2><p>The MRI described crowding at the craniovertebral junction associated with the tonsillar descent.</p></section>
+<section class="p"><span class="tag doc">Documented MRI finding</span><h2>A small shift can change the picture.</h2><p>Mild posterior displacement / distortion of the medulla. Shown conceptually; the arrow is not to scale.</p></section>
+<section class="p"><span class="tag con">Conceptual visualization</span><h2>From image to understanding.</h2><p>An MRI-style view becomes a simplified anatomical visualization.</p></section>
+<section class="p"><h2>The journey to surgery.</h2></section>
+<section class="p"><span class="tag doc">Documented MRI finding</span><h2>Before.</h2><p>The MRI report also partially described atlanto-occipital rotational asymmetry.</p></section>
+<section class="p"><h2>The procedure marked a new chapter.</h2><p>The rings are abstract and educational, not a depiction of the procedure. No post-surgery MRI is part of this project.</p></section>
+<section class="p"><h2>Recovery is not one moment.<br>It is a journey.</h2></section>
+<section class="p ctr"><div class="lines"><span>Understand the finding.</span><span>Understand the body.</span><span>Understand the journey.</span><span>Keep asking questions.</span></div></section>
+<section class="p ctr fin"><h2>UNDERSTANDING<br>CHANGED THE WAY<br>I SEE MYSELF.</h2><footer>An interactive personal medical visualization project.<br>Designed &amp; Developed by Bhavani</footer></section>
+
+<div id="sp"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
